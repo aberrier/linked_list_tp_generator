@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1424451795 source:c:\users\alain\desktop\informatique\listes_chaines\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fcts.h"
+
+1424455065 c:\users\alain\desktop\informatique\listes_chaines\fcts.h
+
+1424455314 source:c:\users\alain\desktop\informatique\listes_chaines\manip.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fcts.h"
+
+1424451795 source:d:\documents\ece\informatique\c\listes_chaines\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fcts.h"
+
+1424455065 d:\documents\ece\informatique\c\listes_chaines\fcts.h
+
+1424455314 source:d:\documents\ece\informatique\c\listes_chaines\manip.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fcts.h"
+
