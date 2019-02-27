@@ -3,7 +3,7 @@
 #define TAILLE_MAX 20 //Limite de la taille des {{verbose_name}}s et pre{{verbose_name}}s
 
 //Structure informations sur {{name}}
-typedef struct {{name}};
+typedef struct {{name}}
 {
     int id;
     char {{verbose_name}}[TAILLE_MAX];
@@ -16,7 +16,7 @@ typedef struct {{name}};
 //Structure Maillon
 typedef struct cell
 {
-    {{name}} data;
+    {{Name}} data;
     struct cell* suiv;
 }Cell;
 
