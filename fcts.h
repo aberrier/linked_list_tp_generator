@@ -20,6 +20,7 @@ typedef struct cell
     struct cell* suiv;
 }Cell;
 
+void ModifMaillon(Cell* ancre, Cell* m, int val);
 Cell *SaisieData();
 void NbMaillon(Cell*);
 Cell *AjoutTete(Cell*,Cell*);

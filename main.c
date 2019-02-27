@@ -73,7 +73,7 @@ int main()
                 printf("Veuillez rentrer le {{verbose_name}} du {{name}} : ");
                 fflush(stdin);
                 scanf("%s", &recherche);
-                SearchName(ancre,recherche);
+                Search{{Verbose_name}}(ancre,recherche);
                 break;
             case 6:
                 printf("Veuillez rentrer le numero du {{name}} correspondant : ");
