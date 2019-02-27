@@ -73,7 +73,7 @@ int main()
         case 5:
             printf("Veuillez rentrer le nom de l'etudiant : ");
             fflush(stdin);
-            gets(recherche);
+            scanf("%s", &recherche);
             SearchName(ancre,recherche);
             break;
         case 6:
@@ -114,7 +114,7 @@ int main()
             }
             break;
         case 8:
-            printf("\n\n****Vous allez importer la liste presente dans le fichier \"data.ber\"****\n");
+            printf("\n\n****Vous allez importer la liste presente dans le fichier \"data.txt\"****\n");
             printf("****La liste actuelle va etre effacee !****\n***Confirmer votre choix ?(1=OUI,0=NON) : ");
             scanf("%d",&choix2);
             if(choix2!=1)

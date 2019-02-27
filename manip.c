@@ -15,10 +15,10 @@ Cell *SaisieData()
     scanf("%d",&nouveau->data.id);
     fflush(stdin);
     printf("Nom : ");
-    gets(nouveau->data.nom);
+    scanf("%s", &nouveau->data.nom);
     fflush(stdin);
     printf("Prenom : ");
-    gets(nouveau->data.prenom);
+    scanf("%s", &nouveau->data.prenom);
     fflush(stdin);
     printf("Age : ");
     scanf("%d",&nouveau->data.age);
@@ -132,7 +132,7 @@ void AjoutMiddle(Cell* ancre, Cell* m, int val)
             }
             else
             {
-                //Exploration jusqu'a tomber sur la valeur voulue
+                //Exploration jusqu'a tomtxt sur la valeur voulue
                 explo=explo->suiv;
                 cpts=cpts+1;
             }
@@ -371,7 +371,7 @@ void Export(Cell* ancre)
     Cell* explo=ancre;
     FILE*liste=NULL;
     //Ouverture du fichier et ecriture du code de reconnaissance
-    liste=fopen("data.ber","w");
+    liste=fopen("data.txt","w");
 
     //Cas liste vide
     if(ancre==NULL)
@@ -428,7 +428,7 @@ void Export(Cell* ancre)
         }
     }
     fclose(liste);
-    printf("\nExportation effectuee avec succes dans le fichier \"data.ber\"\n");
+    printf("\nExportation effectuee avec succes dans le fichier \"data.txt\"\n");
     system("pause");
     system("cls");
 
@@ -483,7 +483,7 @@ Cell* Import(Cell* ancre)
     int TD;
     char tampon;
     //Ouverture du fichier et ecriture du code de reconnaissance
-    liste=fopen("data.ber","r+");
+    liste=fopen("data.txt","r+");
     if(liste==NULL)
     {
         printf("Fichier inexistant ! Positionnez le fichier dans le meme repertoire que le programme puis reessayez\n");
