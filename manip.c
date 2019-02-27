@@ -14,20 +14,20 @@ Cell *SaisieData()
     printf("Identifiant : ");
     scanf("%d",&nouveau->data.id);
     fflush(stdin);
-    printf("Nom : ");
-    scanf("%s", &nouveau->data.nom);
+    printf("{{verbose_name}} : ");
+    scanf("%s", &nouveau->data.{{verbose_name}});
     fflush(stdin);
-    printf("Prenom : ");
-    scanf("%s", &nouveau->data.prenom);
+    printf("{{char_field}} : ");
+    scanf("%s", &nouveau->data.{{char_field}});
     fflush(stdin);
-    printf("Age : ");
-    scanf("%d",&nouveau->data.age);
+    printf("{{int_field_1}} : ");
+    scanf("%d",&nouveau->data.{{int_field_1}});
     fflush(stdin);
-    printf("Promotion : ");
-    scanf("%d",&nouveau->data.promo);
+    printf("{{int_field_2}}tion : ");
+    scanf("%d",&nouveau->data.{{int_field_2}});
     fflush(stdin);
-    printf("Groupe de TD : ");
-    scanf("%d",&nouveau->data.TD);
+    printf("Groupe de {{int_field_3}} : ");
+    scanf("%d",&nouveau->data.{{int_field_3}});
     fflush(stdin);
     //Mise à NULL du pointeur du maillon
     nouveau->suiv=NULL;
@@ -55,7 +55,7 @@ void NbMaillon(Cell* ancre)
         }
         //Mis au dernier
         cpts=cpts+1;
-        printf("\nLa liste contient %d etudiant(s)\n",cpts);
+        printf("\nLa liste contient %d {{name}}(s)\n",cpts);
     }
     system("pause");
     system("cls");
@@ -179,11 +179,11 @@ int SearchOrdre(Cell* ancre,int val)
     }
     printf("\n*****DONNEES PRESENTES AU NUMERO %d *****",val);
     printf("\nIdentifiant : %d",explo->data.id);
-    printf("\nNom : %s",explo->data.nom);
-    printf("\nPrenom : %s",explo->data.prenom);
-    printf("\nAge : %d",explo->data.age);
-    printf("\nPromo : %d",explo->data.promo);
-    printf("\nTD : %d\n",explo->data.TD);
+    printf("\n{{verbose_name}} : %s",explo->data.{{verbose_name}});
+    printf("\n{{char_field}} : %s",explo->data.{{char_field}});
+    printf("\n{{int_field_1}} : %d",explo->data.{{int_field_1}});
+    printf("\n{{int_field_2}} : %d",explo->data.{{int_field_2}});
+    printf("\n{{int_field_3}} : %d\n",explo->data.{{int_field_3}});
     system("pause");
     return 1;
 
@@ -203,12 +203,12 @@ void ModifMaillon(Cell* ancre, Cell* m, int val)
         cpts=cpts+1;
     }
     //Changement des valeurs
-    explo->data.age=m->data.age;
+    explo->data.{{int_field_1}}=m->data.{{int_field_1}};
     explo->data.id=m->data.id;
-    strcpy(explo->data.nom,m->data.nom);
-    strcpy(explo->data.prenom,m->data.prenom);
-    explo->data.promo=m->data.promo;
-    explo->data.TD=m->data.TD;
+    strcpy(explo->data.{{verbose_name}},m->data.{{verbose_name}});
+    strcpy(explo->data.{{char_field}},m->data.{{char_field}});
+    explo->data.{{int_field_2}}=m->data.{{int_field_2}};
+    explo->data.{{int_field_3}}=m->data.{{int_field_3}};
     //
     printf("\n Valeurs modifiees\n");
     system("pause");
@@ -217,7 +217,7 @@ void ModifMaillon(Cell* ancre, Cell* m, int val)
 
 }
 
-void SearchName(Cell* ancre,char name[TAILLE_MAX])
+void Search{{verbose_name}}(Cell* ancre,char name[TAILLE_MAX])
 {
     //Programme qui va afficher le maillon correspond aux maillons. Ne gere pas quand plusieurs personnes ont le meme nom, prend la 1ere personne dans la liste
     Cell* explo=ancre;
@@ -231,16 +231,16 @@ void SearchName(Cell* ancre,char name[TAILLE_MAX])
     }
     while((explo!=NULL)&&(found==0))
     {
-        if(!(strcmp(explo->data.nom,name))) /// !strcmp() renvoie 1 si les 2 chaines sont identiques
+        if(!(strcmp(explo->data.{{verbose_name}},name))) /// !strcmp() renvoie 1 si les 2 chaines sont identiques
         {
             found=1;
-            printf("\n*****DONNEES PRESENTES POUR LE NOM \"%s\" *****",name);
+            printf("\n*****DONNEES PRESENTES POUR LE {{verbose_name}} \"%s\" *****",name);
             printf("\nIdentifiant : %d",explo->data.id);
-            printf("\nNom : %s",explo->data.nom);
-            printf("\nPrenom : %s",explo->data.prenom);
-            printf("\nAge : %d",explo->data.age);
-            printf("\nPromo : %d",explo->data.promo);
-            printf("\nTD : %d\n",explo->data.TD);
+            printf("\n{{verbose_name}} : %s",explo->data.{{verbose_name}});
+            printf("\n{{char_field}} : %s",explo->data.{{char_field}});
+            printf("\n{{int_field_1}} : %d",explo->data.{{int_field_1}});
+            printf("\n{{int_field_2}} : %d",explo->data.{{int_field_2}});
+            printf("\n{{int_field_3}} : %d\n",explo->data.{{int_field_3}});
             printf("\n***Numero*** : %d\n",cpts+1);
         }
         explo=explo->suiv;
@@ -248,7 +248,7 @@ void SearchName(Cell* ancre,char name[TAILLE_MAX])
     }
     if (found==0)
     {
-        printf("\nIl n'y a pas d'etudiant correspondant au nom \"%s\" dans la liste\n",name);
+        printf("\nIl n'y a pas d'{{name}} correspondant au {{verbose_name}} \"%s\" dans la liste\n",name);
     }
     system("pause");
     system("cls");
@@ -384,26 +384,26 @@ void Export(Cell* ancre)
     //Cas liste avec un maillon
     if(ancre->suiv==NULL)
     {
-        fputs("3S3HQxTFk4dh29u\nNe pas modifier ce fichier !\n",liste);
+        fputs("{{key}}\nNe pas modifier ce fichier !\n",liste);
         //Ecriture des donnees
         fprintf(liste,"%d",ancre->data.id);
         fputs("\n",liste);
-        fputs(ancre->data.nom,liste);
+        fputs(ancre->data.{{verbose_name}},liste);
         fputs("\n",liste);
-        fputs(ancre->data.prenom,liste);
+        fputs(ancre->data.{{char_field}},liste);
         fputs("\n",liste);
-        fprintf(liste,"%d",ancre->data.age);
+        fprintf(liste,"%d",ancre->data.{{int_field_1}});
         fputs("\n",liste);
-        fprintf(liste,"%d",ancre->data.promo);
+        fprintf(liste,"%d",ancre->data.{{int_field_2}});
         fputs("\n",liste);
-        fprintf(liste,"%d",ancre->data.TD);
+        fprintf(liste,"%d",ancre->data.{{int_field_3}});
         fputs("\n",liste);
 
     }
     //Cas general
     else
     {
-        fputs("3S3HQxTFk4dh29u\nNe pas modifier ce fichier !\n*************************",liste);
+        fputs("{{key}}\nNe pas modifier ce fichier !\n*************************",liste);
         if(explo==NULL)
         {
             fputs("\n",liste);
@@ -414,15 +414,15 @@ void Export(Cell* ancre)
             fputs("\n",liste);
             fprintf(liste,"%d",explo->data.id);
             fputs("\n",liste);
-            fputs(explo->data.nom,liste);
+            fputs(explo->data.{{verbose_name}},liste);
             fputs("\n",liste);
-            fputs(explo->data.prenom,liste);
+            fputs(explo->data.{{char_field}},liste);
             fputs("\n",liste);
-            fprintf(liste,"%d",explo->data.age);
+            fprintf(liste,"%d",explo->data.{{int_field_1}});
             fputs("\n",liste);
-            fprintf(liste,"%d",explo->data.promo);
+            fprintf(liste,"%d",explo->data.{{int_field_2}});
             fputs("\n",liste);
-            fprintf(liste,"%d",explo->data.TD);
+            fprintf(liste,"%d",explo->data.{{int_field_3}});
             //Exploration jusqu'a fin de la chaine
             explo=explo->suiv;
         }
@@ -434,19 +434,19 @@ void Export(Cell* ancre)
 
 
 }
-Cell* ImportTransfert(Cell* ancre,int id,char nom[TAILLE_MAX], char prenom[TAILLE_MAX], int age, int promo, int TD)
+Cell* ImportTransfert(Cell* ancre,int id,char {{verbose_name}}[TAILLE_MAX], char {{char_field}}[TAILLE_MAX], int {{int_field_1}}, int {{int_field_2}}, int {{int_field_3}})
 {
     Cell* new=NULL;
     Cell* explo=ancre;
     //Allocation du maillon m;
     new=(Cell*)malloc(1*sizeof(Cell));
     //Chargement des valeurs
-    new->data.age=age;
+    new->data.{{int_field_1}}={{int_field_1}};
     new->data.id=id;
-    strcpy(new->data.nom,nom);
-    strcpy(new->data.prenom,prenom);
-    new->data.promo=promo;
-    new->data.TD=TD;
+    strcpy(new->data.{{verbose_name}},{{verbose_name}});
+    strcpy(new->data.{{char_field}},{{char_field}});
+    new->data.{{int_field_2}}={{int_field_2}};
+    new->data.{{int_field_3}}={{int_field_3}};
     //Mise en queue du nouveau maillon
     new->suiv=NULL;
     explo=ancre;
@@ -476,11 +476,11 @@ Cell* Import(Cell* ancre)
     char chaine2[30];
     char chaine3[30];
     int id;
-    char nom[TAILLE_MAX];
-    char prenom[TAILLE_MAX];
-    int age;
-    int promo;
-    int TD;
+    char {{verbose_name}}[TAILLE_MAX];
+    char {{char_field}}[TAILLE_MAX];
+    int {{int_field_1}};
+    int {{int_field_2}};
+    int {{int_field_3}};
     char tampon;
     //Ouverture du fichier et ecriture du code de reconnaissance
     liste=fopen("data.txt","r+");
@@ -496,30 +496,30 @@ Cell* Import(Cell* ancre)
         fgets(chaine1,sizeof(chaine1),liste);
         fgets(chaine2,sizeof(chaine2),liste);
         fgets(chaine3,sizeof(chaine3),liste);
-        if((!(strcmp(chaine1,"3S3HQxTFk4dh29u\n"))&&(!(strcmp(chaine2,"Ne pas modifier ce fichier !\n")))&&(!(strcmp(chaine3,"*************************\n")))))
+        if((!(strcmp(chaine1,"{{key}}\n"))&&(!(strcmp(chaine2,"Ne pas modifier ce fichier !\n")))&&(!(strcmp(chaine3,"*************************\n")))))
         {
             while (!feof(liste))
             {
                 //Lecture des valeurs
                 fscanf(liste,"%d",&id);
                 tampon=fgetc(liste);
-                fgets(nom,sizeof(nom),liste);
-                fgets(prenom,sizeof(prenom),liste);
-                fscanf(liste,"%d",&age);
-                fscanf(liste,"%d",&promo);
-                fscanf(liste,"%d",&TD);
+                fgets({{verbose_name}},sizeof({{verbose_name}}),liste);
+                fgets({{char_field}},sizeof({{char_field}}),liste);
+                fscanf(liste,"%d",&{{int_field_1}});
+                fscanf(liste,"%d",&{{int_field_2}});
+                fscanf(liste,"%d",&{{int_field_3}});
                 //Ajustement des valeurs
-                nom[strlen(nom)-1]='\0';
-                prenom[strlen(prenom)-1]='\0';
+                {{verbose_name}}[strlen({{verbose_name}})-1]='\0';
+                {{char_field}}[strlen({{char_field}})-1]='\0';
                 //Ajout en tete des donnees
-                ancre=ImportTransfert(ancre,id,nom,prenom,age,promo,TD);
+                ancre=ImportTransfert(ancre,id,{{verbose_name}},{{char_field}},{{int_field_1}},{{int_field_2}},{{int_field_3}});
                 /**      test
                 printf("\n###\n%d\n",new->data.id);
-                printf("%s\n",new->data.nom);
-                printf("%s\n",new->data.prenom);
-                printf("%d\n",new->data.age);
-                printf("%d\n",new->data.promo);
-                printf("%d\n",new->data.TD);
+                printf("%s\n",new->data.{{verbose_name}});
+                printf("%s\n",new->data.{{char_field}});
+                printf("%d\n",new->data.{{int_field_1}});
+                printf("%d\n",new->data.{{int_field_2}});
+                printf("%d\n",new->data.{{int_field_3}});
                 printf("###\n");*/
             }
             printf("\n***Importation effectuee avec success***\n");
