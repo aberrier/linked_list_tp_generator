@@ -14,19 +14,19 @@ Cell *SaisieData()
     printf("Identifiant : ");
     scanf("%d",&nouveau->data.id);
     fflush(stdin);
-    printf("{{verbose_name}} : ");
+    printf("{{Verbose_name}} : ");
     scanf("%s", &nouveau->data.{{verbose_name}});
     fflush(stdin);
-    printf("{{char_field}} : ");
+    printf("{{Char_field}} : ");
     scanf("%s", &nouveau->data.{{char_field}});
     fflush(stdin);
-    printf("{{int_field_1}} : ");
+    printf("{{Int_field_1}} : ");
     scanf("%d",&nouveau->data.{{int_field_1}});
     fflush(stdin);
-    printf("{{int_field_2}}tion : ");
+    printf("{{Int_field_2}} : ");
     scanf("%d",&nouveau->data.{{int_field_2}});
     fflush(stdin);
-    printf("Groupe de {{int_field_3}} : ");
+    printf("Groupe de {{Int_field_3}} : ");
     scanf("%d",&nouveau->data.{{int_field_3}});
     fflush(stdin);
     //Mise à NULL du pointeur du maillon
@@ -217,7 +217,7 @@ void ModifMaillon(Cell* ancre, Cell* m, int val)
 
 }
 
-void Search{{verbose_name}}(Cell* ancre,char name[TAILLE_MAX])
+void Search{{Verbose_name}}(Cell* ancre,char name[TAILLE_MAX])
 {
     //Programme qui va afficher le maillon correspond aux maillons. Ne gere pas quand plusieurs personnes ont le meme nom, prend la 1ere personne dans la liste
     Cell* explo=ancre;

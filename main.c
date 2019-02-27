@@ -23,7 +23,7 @@ int main()
     m=NULL;
 
     //Menu
-    printf("\n*****PROGRAMME DE GESTION DE BASE DE DONNEES DES {{name}}S*****");
+    printf("\n*****PROGRAMME DE GESTION DE BASE DE DONNES DE {{NAME}}s*****");
     do
     {
         fflush(stdin);
@@ -37,7 +37,7 @@ int main()
         printf(" 7 - Changer la place de deux {{name}}s dans la liste\n");
         printf(" 8 - Importer une liste\n");
         printf(" 9 - Exporter la liste cree\n");
-        printf(" 10 - Connaitre le nombre d'{{name}}s dans la liste\n");
+        printf(" 10 - Connaitre le nombre de {{name}}s dans la liste\n");
         printf(" 11 - Supprimer un {{name}}\n");
         printf(" 12 - Arreter le programme\n");
         printf("Votre choix : ");
@@ -60,7 +60,7 @@ int main()
                 AjoutMiddle(ancre,m,ajoutmiddle);
                 break;
             case 4:
-                printf("Veuillez rentrer le numero de l'{{name}} que vous souhaitez modifier : ");
+                printf("Veuillez rentrer le numero du {{name}} que vous souhaitez modifier : ");
                 scanf("%d",&modifmaillon);
                 if (SearchOrdre(ancre,modifmaillon))
                 {
@@ -70,13 +70,13 @@ int main()
                 }
                 break;
             case 5:
-                printf("Veuillez rentrer le {{verbose_name}} de l'{{name}} : ");
+                printf("Veuillez rentrer le {{verbose_name}} du {{name}} : ");
                 fflush(stdin);
                 scanf("%s", &recherche);
                 SearchName(ancre,recherche);
                 break;
             case 6:
-                printf("Veuillez rentrer le numero de l'{{name}} correspondant : ");
+                printf("Veuillez rentrer le numero du {{name}} correspondant : ");
                 scanf("%d",&searchordre);
                 SearchOrdre(ancre,searchordre);
                 system("cls");
@@ -138,7 +138,7 @@ int main()
                 NbMaillon(ancre);
                 break;
             case 11:
-                printf("Rentrez le numero de l'{{name}} a supprimer, 0 ou moins annule le choix : ");
+                printf("Rentrez le numero du {{name}} a supprimer, 0 ou moins annule le choix : ");
                 scanf("%d",&del);
                 if(del>0)
                 {
