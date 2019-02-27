@@ -11,12 +11,12 @@ typedef struct {{name}};
     int {{int_field_1}};
     int {{int_field_2}};
     int {{int_field_3}};
-}{{name}};
+}{{Name}};
 
 //Structure Maillon
 typedef struct cell
 {
-    Info data;
+    {{name}} data;
     struct cell* suiv;
 }Cell;
 
@@ -26,7 +26,7 @@ Cell *AjoutTete(Cell*,Cell*);
 Cell *AjoutQueue(Cell*,Cell*);
 void AjoutMiddle(Cell*,Cell*,int);
 int SearchOrdre(Cell*,int);
-void Search{{verbose_name}}(Cell*,char {{verbose_name}}[TAILLE_MAX]);
+void Search{{Verbose_name}}(Cell*,char {{verbose_name}}[TAILLE_MAX]);
 Cell *PermutMaillon(Cell*,int,int);
 Cell *DeleteMaillon(Cell*,int);
 void Export(Cell*);
