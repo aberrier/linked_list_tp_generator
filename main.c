@@ -23,7 +23,7 @@ int main()
     m=NULL;
 
     //Menu
-    printf("\n*****PROGRAMME DE GESTION DE BASE DE DONNES DE {{NAME}}s*****");
+    printf("\n*****PROGRAMME DE GESTION DE BASE DE DONNES DE {{NAME}}S*****");
     do
     {
         fflush(stdin);
