@@ -28,6 +28,8 @@ Cell *AjoutQueue(Cell*,Cell*);
 void AjoutMiddle(Cell*,Cell*,int);
 int SearchOrdre(Cell*,int);
 void Search{{Verbose_name}}(Cell*,char {{verbose_name}}[TAILLE_MAX]);
+Cell* Tri{{Int_field_2}}(Cell* ancre)
+Cell* Tri{{Int_field_1}}(Cell* ancre)
 Cell *PermutMaillon(Cell*,int,int);
 Cell *DeleteMaillon(Cell*,int);
 void Export(Cell*);

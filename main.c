@@ -39,7 +39,9 @@ int main()
         printf(" 9 - Exporter la liste cree\n");
         printf(" 10 - Connaitre le nombre de {{name}}s dans la liste\n");
         printf(" 11 - Supprimer un {{name}}\n");
-        printf(" 12 - Arreter le programme\n");
+        printf(" 12 - Trier la liste par {{int_field_1}}\n");
+        printf(" 13 - Trier la liste par {{int_field_2}}\n");
+        printf(" 14 - Arreter le programme\n");
         printf("Votre choix : ");
         scanf("%d",&choix);
         system("cls");
@@ -154,6 +156,12 @@ int main()
 
                 break;
             case 12:
+                ancre = Tri{{Int_field_1}}(ancre);
+                break;
+            case 13:
+                ancre = TriTri{{Int_field_2}}(ancre);
+                break;
+            case 14:
                 arret=1;
                 break;
             default:

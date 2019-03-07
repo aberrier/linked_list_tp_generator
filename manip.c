@@ -366,6 +366,77 @@ Cell* PermutMaillon(Cell* ancre,int val1,int val2)
     return ancre;
 
 }
+
+Cell* Tri{{int_field_1}}(Cell* ancre)
+{
+    //Programme qui va trier par l'age
+    Cell* explo=ancre;
+    Cell* explo2=NULL;
+    if(ancre==NULL)
+    {
+        printf("\nLa liste est vide ! \n");
+        system("pause");
+        system("cls");
+        return NULL;
+    }
+    int cpts1=0;
+    while((explo!=NULL))
+    {
+        cpts1++;
+        explo2 = explo;
+        int cpts2 = 0;
+        while((explo2!=NULL))
+        {
+            cpts2++;
+            if (explo2->data.{{int_field_1}} > explo->data.{{int_field_1}})
+            {
+                ancre = PermutMaillon(ancre,cpts1,cpts2);
+            }
+            explo2=explo2->suiv;
+        }
+        explo=explo->suiv;
+    }
+    printf("\nListe triée par {{int_field_1}} !\n");
+    system("pause");
+    system("cls");
+    return ancre;
+}
+
+Cell* Tri{{Int_field_2}}(Cell* ancre)
+{
+    //Programme qui va trier par l'age
+    Cell* explo=ancre;
+    Cell* explo2=NULL;
+    if(ancre==NULL)
+    {
+        printf("\nLa liste est vide ! \n");
+        system("pause");
+        system("cls");
+        return NULL;
+    }
+    int cpts1=0;
+    while((explo!=NULL))
+    {
+        cpts1++;
+        explo2 = explo;
+        int cpts2 = 0;
+        while((explo2!=NULL))
+        {
+            cpts2++;
+            if (explo2->data.{{int_field_2}} > explo->data.{{int_field_2}})
+            {
+                ancre = PermutMaillon(ancre,cpts1,cpts2);
+            }
+            explo2=explo2->suiv;
+        }
+        explo=explo->suiv;
+    }
+    printf("\nListe triée par {{int_field_2}} !\n");
+    system("pause");
+    system("cls");
+    return ancre;
+}
+
 void Export(Cell* ancre)
 {
     Cell* explo=ancre;
