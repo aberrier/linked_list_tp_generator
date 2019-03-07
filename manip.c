@@ -367,7 +367,7 @@ Cell* PermutMaillon(Cell* ancre,int val1,int val2)
 
 }
 
-Cell* Tri{{int_field_1}}(Cell* ancre)
+Cell* Tri{{Int_field_1}}(Cell* ancre)
 {
     //Programme qui va trier par l'age
     Cell* explo=ancre;

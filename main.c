@@ -159,7 +159,7 @@ int main()
                 ancre = Tri{{Int_field_1}}(ancre);
                 break;
             case 13:
-                ancre = TriTri{{Int_field_2}}(ancre);
+                ancre = Tri{{Int_field_2}}(ancre);
                 break;
             case 14:
                 arret=1;
