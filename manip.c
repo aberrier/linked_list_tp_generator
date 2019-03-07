@@ -26,7 +26,7 @@ Cell *SaisieData()
     printf("{{Int_field_2}} : ");
     scanf("%d",&nouveau->data.{{int_field_2}});
     fflush(stdin);
-    printf("Groupe de {{Int_field_3}} : ");
+    printf("{{Int_field_3}} : ");
     scanf("%d",&nouveau->data.{{int_field_3}});
     fflush(stdin);
     //Mise à NULL du pointeur du maillon
