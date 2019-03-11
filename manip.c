@@ -369,69 +369,71 @@ Cell* PermutMaillon(Cell* ancre,int val1,int val2)
 
 Cell* Tri{{Int_field_1}}(Cell* ancre)
 {
-    //Programme qui va trier par l'age
-    Cell* explo=ancre;
-    Cell* explo2=NULL;
-    if(ancre==NULL)
+    int swap, i;
+    Cell* explo;
+    Cell* explo2 = NULL;
+
+
+    if (ancre == NULL)
+        return ancre;
+
+    do
     {
-        printf("\nLa liste est vide ! \n");
-        system("pause");
-        system("cls");
-        return NULL;
-    }
-    int cpts1=0;
-    while((explo!=NULL))
-    {
-        cpts1++;
-        explo2 = explo;
-        int cpts2 = 0;
-        while((explo2!=NULL))
+        swap = 0;
+        explo = ancre;
+
+        while (explo->suiv != explo2)
         {
-            cpts2++;
-            if (explo2->data.{{int_field_1}} > explo->data.{{int_field_1}})
+            if (explo->data.{{int_field_1}} > explo->suiv->data.{int_field_1}})
             {
-                ancre = PermutMaillon(ancre,cpts1,cpts2);
+                Info tmp = explo->data;
+                explo->data = explo->suiv->data;
+                explo->suiv->data = tmp;
+                swap = 1;
             }
-            explo2=explo2->suiv;
+            explo = explo->suiv;
         }
-        explo=explo->suiv;
+        explo2 = explo;
     }
-    printf("\nListe triée par {{int_field_1}} !\n");
+    while (swap);
+
+    printf("\nListe triée par age !\n");
     system("pause");
     system("cls");
     return ancre;
 }
 
-Cell* Tri{{Int_field_2}}(Cell* ancre)
+Cell* Tri{Int_field_2}}(Cell* ancre)
 {
-    //Programme qui va trier par l'age
-    Cell* explo=ancre;
-    Cell* explo2=NULL;
-    if(ancre==NULL)
+    int swap, i;
+    Cell* explo;
+    Cell* explo2 = NULL;
+
+
+    if (ancre == NULL)
+        return ancre;
+
+    do
     {
-        printf("\nLa liste est vide ! \n");
-        system("pause");
-        system("cls");
-        return NULL;
-    }
-    int cpts1=0;
-    while((explo!=NULL))
-    {
-        cpts1++;
-        explo2 = explo;
-        int cpts2 = 0;
-        while((explo2!=NULL))
+        swap = 0;
+        explo = ancre;
+
+        while (explo->suiv != explo2)
         {
-            cpts2++;
-            if (explo2->data.{{int_field_2}} > explo->data.{{int_field_2}})
+            if (explo->data.{int_field_2}} > explo->suiv->data.{int_field_2}})
             {
-                ancre = PermutMaillon(ancre,cpts1,cpts2);
+                Info tmp = explo->data;
+                explo->data = explo->suiv->data;
+                explo->suiv->data = tmp;
+                swap = 1;
             }
-            explo2=explo2->suiv;
+            explo = explo->suiv;
         }
-        explo=explo->suiv;
+        explo2 = explo;
     }
-    printf("\nListe triée par {{int_field_2}} !\n");
+    while (swap);
+
+    printf("\nListe triée par age !\n");
     system("pause");
     system("cls");
     return ancre;
